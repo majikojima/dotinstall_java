@@ -1,14 +1,15 @@
-//文字列
+//三項演算子
 
 /*
-特殊文字 \
 
 */
 public class HelloWorld{
 	public static void main(String[] args){
-		String a = "hello\nworld\t\"";
-		String b = "world";
+		int age = 22;
+		String message;
 
-		System.out.println(a + b);
+		message = (age > 20) ? "大人です" : "子供です";
+
+		System.out.println(message);
 	}
 }
