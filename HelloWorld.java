@@ -1,18 +1,14 @@
-//変数とデータ型
+//文字列
 
 /*
-boolean true/false
-char 一文字 'a'
-byte / short / int / long
-float / double
+特殊文字 \
 
-String 文字列 ""
 */
 public class HelloWorld{
 	public static void main(String[] args){
-		int x;
-		x = 5;
+		String a = "hello\nworld\t\"";
+		String b = "world";
 
-		System.out.println(x);
+		System.out.println(a + b);
 	}
 }
