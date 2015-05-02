@@ -1,44 +1,19 @@
-//クラス
-
-/*
-アクセス修飾子
-
-public
-protected
-private
-*/
-
-class User{
-	protected String name;
-	protected String email;
-
-	//コンストラクタ
-	User(String name, String email){
-		this.name = name;
-		this.email = email;
-	}
-
-	void sayHi(){
-		System.out.println("Hi " + this.name);
-	}
-}
-
-class SuperUser extends User{
-	SuperUser(String name, String email){
-		super(name,email);
-	}
-
-	//メソッドのオーバーライド
-	void sayHi(){
-		System.out.println("HIIIIIIIIIII " + this.name);
-	}
-}
+//Stringクラス
 
 public class HelloWorld{
 	public static void main(String[] args){
-		User tom = new User("tom","tomtom");
-		SuperUser bob = new SuperUser("bob","bobbob");
-		tom.sayHi();
-		bob.sayHi();
+		String s = new String("abcdefg");
+
+		System.out.println(s.length());
+		System.out.println(s.substring(2,5));
+		System.out.println(s.replaceAll("abc", "ABC"));
+		System.out.println(s);
+		
+		String s1 = "Sun,Mon,Tue";
+		String[] youbi = s1.split("," , 0);
+		for(int i=0; i < youbi.length; i++){
+			System.out.println(youbi[i]);
+		}
+
 	}
 }
