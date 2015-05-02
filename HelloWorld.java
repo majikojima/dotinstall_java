@@ -23,10 +23,21 @@ class User{
 	}
 }
 
+class SuperUser extends User{
+	SuperUser(String name, String email){
+		super(name,email);
+	}
+
+	//メソッドのオーバーライド
+	void sayHi(){
+		System.out.println("HIIIIIIIIIII " + this.name);
+	}
+}
+
 public class HelloWorld{
 	public static void main(String[] args){
 		User tom = new User("tom","tomtom");
-		User bob = new User("bob","bobbob");
+		SuperUser bob = new SuperUser("bob","bobbob");
 		tom.sayHi();
 		bob.sayHi();
 	}
