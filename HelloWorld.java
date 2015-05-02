@@ -1,7 +1,10 @@
-//コメント
+//変数とデータ型
 
 public class HelloWorld{
 	public static void main(String[] args){
-		System.out.println("Hello World");
+		int x;
+		x = 5;
+
+		System.out.println(x);
 	}
 }
