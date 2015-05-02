@@ -1,16 +1,16 @@
 //クラス
 
 /*
-クラス：設計図
--メンバー変数（フィールド）
--メソッド
+アクセス修飾子
 
-インスタンス：実体化
+public
+protected
+private
 */
 
 class User{
-	String name;
-	String email;
+	protected String name;
+	protected String email;
 
 	//コンストラクタ
 	User(String name, String email){
