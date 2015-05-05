@@ -1,50 +1,72 @@
-//http://popp915.blog58.fc2.com/blog-entry-299.html
-//防御的コピー
-
-import java.util.Date;
+//http://www.javaroad.jp/java_collection2.htm
+//List
+import java.util.*;
 
 public class HelloWorld{
+	void addhead(List exList){
+		for(int i=0; i<10000; i++){
+			exList.add(0, new Integer(i));
+		}
+	}
+
+	void addend(List exList){
+		for(int i=0; i<10000; i++){
+			exList.add(new Integer(i));
+		}
+	}
+
+	void select(List exList){
+		for(int i=0; i<10000; i++){
+			exList.get(i);
+		}
+	}
+
 	public static void main(String[] args){
-		Date badDate = new Date();
-		BadPeriod bad = new BadPeriod(badDate);
-		//内部の値を変更する
-		badDate.setYear(1000);
+		long start, stop;
+		HelloWorld object = new HelloWorld();
+		List al1 = new ArrayList();
+		List ll1 = new LinkedList();
+		List al2 = new ArrayList();
+		List ll2 = new LinkedList();
 
-		Date goodDate = new Date();
-		GoodPeriod good = new GoodPeriod(goodDate);
-		//内部の値を変更する
-		goodDate.setYear(1000);
+		//ArrayList先頭追加処理
+		start = System.currentTimeMillis();
+		object.addhead(al1);
+		stop = System.currentTimeMillis();
+		System.out.println("ArrayLsitの先頭追加処理：" + (stop-start));
 
-		System.out.println(bad.getDate());
-		System.out.println(good.getDate());
-	}
-}
+		//LinkedList先頭追加処理
+		start = System.currentTimeMillis();
+		object.addhead(ll1);
+		stop = System.currentTimeMillis();
+		System.out.println("LinkedLsitの先頭追加処理：" + (stop-start));
+		//先頭追加はLinkedListが早い
 
-//防御的コピーが出来ていないクラス
-class BadPeriod{
-	private final Date date;
+		//ArrayList最後追加処理
+		start = System.currentTimeMillis();
+		object.addend(al2);
+		stop = System.currentTimeMillis();
+		System.out.println("ArrayLsitの最後追加処理：" + (stop-start));
 
-	//コンストラクタ
-	public BadPeriod(Date date){
-		this.date = date;
-	}
+		//LinkedList最後追加処理
+		start = System.currentTimeMillis();
+		object.addend(ll2);
+		stop = System.currentTimeMillis();
+		System.out.println("LinkedLsitの最後追加処理：" + (stop-start));
+		//最後追加の速度は変わらない
 
-	public Date getDate(){
-		return date;
-	}
-}
+		//ArrayList検索処理
+		start = System.currentTimeMillis();
+		object.select(al1);
+		stop = System.currentTimeMillis();
+		System.out.println("ArrayLsitの検索処理：" + (stop-start));
 
-//防御的コピーが出来ているクラス
-class GoodPeriod{
-	private final Date date;
+		//LinkedList検索処理
+		start = System.currentTimeMillis();
+		object.select(ll1);
+		stop = System.currentTimeMillis();
+		System.out.println("LinkedLsitの検索処理：" + (stop-start));
+		//検索はArrayListが早い
 
-	//コンストラクタ
-	public GoodPeriod(Date date){
-		//引数として渡ってきた値を取り出し、新たにオブジェクトを生成しましょう。
-		this.date = new Date(date.getTime());
-	}
-
-	public Date getDate(){
-		return new Date(this.date.getTime());
 	}
 }
