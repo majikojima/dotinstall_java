@@ -3,8 +3,8 @@
 
 public class HelloWorld{
 	public static void main(String[] args){
-		//細かいことは田中に任せる
-		WoodCutPrint wcp = new TanakasWoodCutPrint();
+		//細かいことは今川に任せる
+		CutPrint wcp = new ImagawasCutPrint();
 		//大まかな流れは教える
 		wcp.createWoodCutPrint();
 	}
