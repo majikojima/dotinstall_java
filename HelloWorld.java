@@ -1,11 +1,11 @@
-//http://www.techscore.com/tech/DesignPattern/Adapter/Adapter1.html/
-//委譲を利用した Adapter パターン
+//http://www.techscore.com/tech/DesignPattern/TemplateMethod.html/
+//TemplateMethod パターン
 
 public class HelloWorld{
 	public static void main(String[] args){
-		//学級委員の花子さん
-		Chairperson chairperson = new Hanako();
-		//クラスをまとめて頂戴
-		chairperson.organizeClass();
+		//細かいことは田中に任せる
+		WoodCutPrint wcp = new TanakasWoodCutPrint();
+		//大まかな流れは教える
+		wcp.createWoodCutPrint();
 	}
 }
