@@ -1,11 +1,12 @@
-//http://www.techscore.com/tech/DesignPattern/TemplateMethod.html/
-//TemplateMethod パターン
+//http://www.techscore.com/tech/DesignPattern/Singleton.html/
+//Singletonパターン
 
 public class HelloWorld{
 	public static void main(String[] args){
-		//細かいことは今川に任せる
-		CutPrint wcp = new ImagawasCutPrint();
-		//大まかな流れは教える
-		wcp.createWoodCutPrint();
+		RegisterNote note = RegisterNote.getInstance();
+		RegisterNote note2 = RegisterNote.getInstance();
+		if(note == note2){
+			System.out.println("same Instance");
+		}
 	}
 }
